@@ -78,10 +78,11 @@
       transform: translate(-20%, -32%);
     }
     @media (max-width: $tablet) {
-      transform: translate(-27%, -25%);
+      width: 2200px !important;
+      transform: translate(-30%, -25%);
     }
     @media(max-width: $mobile) {
-      transform: translate(-30.5%, -22%);
+      transform: translate(-30.5%, -28%);
       width: 2000px !important;
     }
     @media(max-width: $mobile) and (max-height: 750px) {
@@ -105,10 +106,10 @@
   }
   @media(max-width: $tablet) {
     flex-direction: column-reverse;
-    height: 580px;
+    height: 53vh;
   }
   @media(max-width: $mobile) {
-    height: 480px;
+    height: 52vh;
   }
   @media(max-width: $mobile) and (max-height: 750px) {
     height: 280px;
