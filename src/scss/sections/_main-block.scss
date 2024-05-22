@@ -85,7 +85,8 @@
       width: 2000px !important;
     }
     @media(max-width: $mobile) and (max-height: 750px) {
-      transform: translate(-15.5%, -10%) scale(0.35);
+      transform: translate(-39.5%, -23%);
+      width: 1000px !important;
     }
 
   }
@@ -220,6 +221,8 @@
   letter-spacing: -0.26px;
   padding-left: 10px;
   font-weight: 500;
+  position: relative;
+  z-index: 2;
   display: inline-block;
 
   b {
