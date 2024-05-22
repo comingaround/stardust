@@ -1,9 +1,10 @@
 .main-block {
   display: flex;
   flex-direction: column;
-  padding: 25px 0 55px;
+  padding: 25px 0 32px;
   flex-grow: 1;
   transition: all 0.3s ease;
+  position: relative;
   height: 100dvh;
   @media(max-width: $pc) {
     padding-bottom: 30px;
@@ -17,6 +18,7 @@
 .main-block__container {
   flex-grow: 1;
   display: flex;
+  position: relative;
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
@@ -32,19 +34,21 @@
   line-height: 0.86;
   margin-bottom: 8vh;
   position: relative;
+  font-size: 223.054px;
   z-index: 2;
-  @media(min-width: 1499px) {
-    font-size: 223.054px;
+  @media(max-width: 1499px) {
+    font-size: 187px;
+  }
+  @media(max-width: 1299px) {
+    font-size: 125.054px;
   }
   @media(max-width: $tablet) {
     margin-bottom: 16px;
+
   }
-  @media(min-width: $mobile) {
-    font-size: 125.054px;
-  }
-  @include adaptiveValue("font-size", 187, 58, 0, 1399, 500) ;
-  @media(max-width: 360px) {
-    font-size: 50px;
+
+  @media(max-width: $mobile) {
+    font-size: 16.6vw
   }
 
   .red {
@@ -55,25 +59,30 @@
 .main-block__animation {
   flex-grow: 1;
   position: relative;
-  transform: rotate(4deg);
 
-  spline-viewer {
+  canvas {
     position: absolute;
     left: 0;
     transform-origin: top left;
     top: 0;
-    width: 2000px;
+    width: 120vw !important;
+    height: auto !important;
     pointer-events: none;
-    height: auto;
-    transform: translate(-15%, -37%);
+    aspect-ratio: 2;
+    transform: translate(-25vw, -18vw);
+    @media(max-width: 1920px) {
+      width: 2600px !important;
+      transform: translate(-20%, -32%);
+    }
     @media (max-width: $pc) {
-      transform: translate(-11%, -30%) scale(0.8);
+      transform: translate(-20%, -32%);
     }
     @media (max-width: $tablet) {
-      transform: translate(-22%, -25%) scale(0.9);
+      transform: translate(-27%, -25%);
     }
     @media(max-width: $mobile) {
-      transform: translate(-18.5%, -15%) scale(0.55);
+      transform: translate(-30.5%, -22%);
+      width: 2000px !important;
     }
     @media(max-width: $mobile) and (max-height: 750px) {
       transform: translate(-15.5%, -10%) scale(0.35);
@@ -90,7 +99,7 @@
   @media (max-width: $pc) {
     padding-left: 238px;
   }
-  @media(max-width: 1499px) {
+  @media(max-width: 1299px) {
     padding-left: 200px;
   }
   @media(max-width: $tablet) {
@@ -98,7 +107,7 @@
     height: 580px;
   }
   @media(max-width: $mobile) {
-    height: 380px;
+    height: 480px;
   }
   @media(max-width: $mobile) and (max-height: 750px) {
     height: 280px;
@@ -137,7 +146,10 @@
 
 .main-block__bottom {
   font-size: 92px;
-  position: relative;
+  position: absolute;
+  padding-left: var(--padding);
+  bottom: 0;
+  left: 0;
   z-index: 2;
   font-weight: 400;
   line-height: 0.95;
