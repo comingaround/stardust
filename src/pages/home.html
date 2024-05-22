@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> _head title='Homepage'}}
+<body>
+<div class="wrapper">
+    {{> _preloader }}
+    <main class="page">
+        {{> _header }}
+        <div class="main-block">
+            <div class="main-block__container">
+                <div class="main-block__top">
+                    <h1 class="main-block__title">
+                        Sterrenstof<span class="red">*</span> <br>
+                        <span class="light-text">
+                            Studio
+                       </span>
+                        <span class="title-descr">
+                            <span class="title-descr-label">TM</span>
+                            <span
+                                    class="title-descr-text pc">
+                            <b>Creatieve agency</b> with a <br> 50% burn-out. don’t worry <br> we’re currently working on it.
+                        </span>
+                        </span>
+                    </h1>
+                    <span
+                            class="title-descr-text mob">
+                            <b>Creatieve agency</b> with a  50%  burn-out. don’t worry  we’re currently working on it.
+                        </span>
+                    <div class="main-block__row">
+                        <div class="main-block__text">
+                            🚀 In the last 3 years we made like <b>1000+ bol.com listings</b>
+                        </div>
+                        <div class="main-block__animation">
+                            <spline-viewer
+                                    url="https://prod.spline.design/20dGyTTufZ-vZ9Ja/scene.splinecode" rameborder='0'
+                                    width='100%' height=700px></spline-viewer>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-block__bottom">
+                    <span class="red">*</span>We’re closed– for now...
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.3.8/build/spline-viewer.js"></script>
+<script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

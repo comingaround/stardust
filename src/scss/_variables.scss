@@ -1,0 +1,19 @@
+
+:root {
+  --primary: #FFF;
+  --main-bg: #000;
+  --red: #F00;
+  --red2: #FF3939;
+
+  --font-primary: 'Helvetica', sans-serif;
+  --font-secondary: 'General', sans-serif;
+
+  --container-width: 1544px;
+  --padding: 40px;
+  @media(max-width: 1499px) {
+    --padding: 32px;
+  }
+  @media(max-width: 1199px) {
+    --padding: 12px;
+  }
+}

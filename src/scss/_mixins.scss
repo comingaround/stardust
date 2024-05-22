@@ -1,0 +1,105 @@
+@use "sass:math";
+
+@mixin viewport-md {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin text-gradient {
+  background: var(--hero-name-background);
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin gradient-border($gradient, $width:2px, $radius:12px) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: $gradient;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  inset: 0;
+  padding: $width;
+  border-radius: $radius;
+}
+
+@function percent($number1 ,$number2) {
+  @return math.percentage(math.div($number1, $number2))
+}
+
+@function toRem($px, $current: 1) {
+  $result: math.div($px, $current) + px;
+  @return $result;
+}
+
+
+@function em($px, $current: 1) {
+  $result: math.div($px, $current) + px;
+  @return $result;
+}
+
+@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
+  @if ($startSize==0) {
+    $startSize: 0.000001;
+  }
+  @if ($minSize==0) {
+    $minSize: 0.000001;
+  }
+
+
+  $addSize: math.div($startSize - $minSize, 16);
+
+  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+    $widthFrom: $maxWidth;
+  }
+
+
+  $widthFromMedia: em($widthFrom);
+  $widthToMedia: #{calc($widthTo + 1)}px;
+
+  // Формула плаваючого значення
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+  $yIntersection: -$widthTo * $slope + $minSize;
+  @if ($yIntersection==0) {
+    $yIntersection: 0.000001;
+  }
+  $flyValue: #{toRem($yIntersection)}" + " #{$slope * 100}vw;
+
+  // Отримання значення властивості
+  $propertyValue: #{"clamp(" toRem($minSize) "," $flyValue "," toRem($startSize) ")"};
+  // Якщо негативні значення
+  @if ($minSize > $startSize) {
+    $propertyValue: #{"clamp(" toRem($startSize) "," $flyValue "," toRem($minSize) ")"};
+  }
+
+  // Встановлюємо значення за замовчуванням
+  @if $keepSize != 1 and $keepSize != 3 {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: toRem($startSize);
+    }
+  }
+  // Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
+  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+    // Якщо підтримується clamp();
+    @supports (#{$property}: $propertyValue) {
+      #{$property}: $propertyValue;
+    }
+    // Якщо не підтримується clamp();
+    @supports not (#{$property}: $propertyValue) {
+      #{$property}: calc(#{toRem($minSize)} + #{$addSize} * (100vw - #{toRem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
+    }
+  }
+  @if $keepSize != 1 and $keepSize != 2 {
+    @media (max-width: $widthToMedia) {
+      #{$property}: toRem($minSize);
+    }
+  }
+}
+

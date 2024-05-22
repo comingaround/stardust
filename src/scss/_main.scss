@@ -1,0 +1,89 @@
+@import "variables";
+
+$big: 1919.98px;
+$pc: 1519.98px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+$containerWidth: 1499px;
+$maxContainerWidth: 1499px;
+$minWidth: 320px;
+
+body {
+  overflow: hidden;
+
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+
+  }
+
+
+  .loaded & {
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+
+  > main {
+    flex: 1 1 auto;
+  }
+
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="__container"] {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--padding);
+  @media (max-width: $big) {
+    max-width: 100%;
+  }
+}
+
+.ibg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &--top {
+    object-position: top;
+  }
+
+  &--bottom {
+    object-position: bottom;
+  }
+
+  &--left {
+    object-position: left;
+  }
+
+  &--right {
+    object-position: right;
+  }
+
+  &--contain {
+    object-fit: contain;
+  }
+}
+
+
+@import './layouts/header';
+@import './layouts/footer';

@@ -1,0 +1,158 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  padding: 25px 37px;
+  @media (max-width: $big) {
+    padding: 24px;
+  }
+  @media(max-width: 1499px) {
+    padding: 24px 30px;
+  }
+  @media(max-width: $tablet) {
+    width: 100%;
+    padding: 4px 12px 4px 12px;
+  }
+}
+
+.header__container {
+  padding: 0;
+}
+
+.header__row {
+  @media(max-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header__logo {
+  margin-bottom: 12px;
+  max-width: 108px;
+  @media (max-width: 1499px) {
+    max-width: 90px;
+    margin-bottom: 10px;
+  }
+  @media(max-width: $tablet) {
+    max-width: 45px;
+  }
+
+  img {
+    max-width: 100%
+  }
+}
+
+.header__list {
+  display: grid;
+  gap: 8px;
+  @media (max-width: $tablet) {
+    display: flex;
+    gap: 16px;
+  }
+
+  a {
+    font-family: var(--font-secondary);
+    color: #FFF;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 0.92;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: flex-end;
+    gap: 4px;
+    --duration: 5s;
+    @media (max-width: 1499px) {
+      font-size: 21.859px;
+    }
+    @media(max-width: $tablet) {
+      font-size: 26px;
+    }
+
+    span {
+      animation: anim-text 5s linear infinite;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      animation: anim-icon 5s linear infinite;
+      @media (max-width: 1499px) {
+        width: 12px;
+        height: 12px;
+      }
+      @media(max-width: $tablet) {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &:hover {
+      span {
+        animation: anim-text2 0.3s linear forwards;
+      }
+
+      svg {
+        animation: anim-icon2 0.3s linear forwards;
+      }
+    }
+
+  }
+}
+
+@keyframes anim-text {
+  0% {
+    transform: translateX(0px);
+  }
+  6% {
+    transform: translateX(-6px);
+  }
+  12% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(0px);
+
+  }
+}
+
+@keyframes anim-text2 {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-6px);
+
+  }
+}
+
+
+@keyframes anim-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  6% {
+    transform: rotate(-10deg);
+  }
+  12% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+
+  }
+}
+
+@keyframes anim-icon2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg);
+
+  }
+}
+
