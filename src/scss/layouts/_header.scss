@@ -52,6 +52,14 @@
     gap: 16px;
   }
 
+  &:hover {
+    a {
+      span, svg, img {
+        animation-name: none;
+      }
+    }
+  }
+
   a {
     font-family: var(--font-secondary);
     color: #FFF;
@@ -72,14 +80,15 @@
     }
 
     span {
-      animation: anim-text 5s linear infinite;
+      display: inline-block;
+      animation: anim-text 3s 1s cubic-bezier(.48, .87, .47, .28) infinite;
     }
 
     svg {
       width: 14px;
       height: 14px;
       flex-shrink: 0;
-      animation: anim-icon 5s linear infinite;
+      animation: anim-icon 3s 1s cubic-bezier(.48, .87, .47, .28) infinite;
       @media (max-width: 1499px) {
         width: 12px;
         height: 12px;
@@ -90,13 +99,27 @@
       }
     }
 
+    p {
+      transition: 0.2s cubic-bezier(.48, .87, .47, .28);
+    }
+
     &:hover {
+
+
+      p.text {
+        transform: translateX(-6px);
+      }
+
+      p.svg {
+        transform: rotate(-15deg);
+      }
+
       span {
-        animation: anim-text2 0.2s linear forwards;
+        animation: none;
       }
 
       svg {
-        animation: anim-icon2 0.2s linear forwards;
+        animation: none;
       }
     }
 
@@ -135,7 +158,7 @@
     transform: rotate(0deg);
   }
   6% {
-    transform: rotate(15deg);
+    transform: rotate(-15deg);
   }
   12% {
     transform: rotate(0deg);
@@ -151,7 +174,7 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(-15deg);
 
   }
 }

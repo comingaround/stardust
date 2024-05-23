@@ -47,6 +47,9 @@
 
   }
 
+  @media(max-width: $tablet) {
+    font-size: 16.9vw
+  }
   @media(max-width: $mobile) {
     font-size: 16.6vw
   }
@@ -65,36 +68,32 @@
     left: 0;
     transform-origin: top left;
     top: 0;
-    width: 120vw !important;
-    height: auto !important;
     pointer-events: none;
-    aspect-ratio: 2;
-    transform: translate(-25vw, -18vw);
+    aspect-ratio: 1.5;
+    height: 150vh;
+    transform: translate(-11%, -35%);
     @media(max-width: 1920px) {
-      width: 2600px !important;
-      transform: translate(-20%, -32%);
+
     }
     @media (max-width: $pc) {
-      transform: translate(-20%, -32%);
+      //transform: translate(-20%, -35%);
     }
     @media (max-width: $tablet) {
-      width: 2200px !important;
-      transform: translate(-30%, -25%);
+      transform: translate(-11%, -30%);
+      height: 120vh;
     }
-    @media(max-width: $mobile) {
-      transform: translate(-30.5%, -28%);
-      width: 2000px !important;
-    }
-    @media(max-width: $mobile) and (max-height: 750px) {
-      transform: translate(-39.5%, -23%);
-      width: 1000px !important;
-    }
+    //@media(max-width: $mobile) {
+    //  transform: translate(-21%, -28%);
+    //  width: 2000px !important;
+    //}
   }
 
   canvas {
-    width: 100%;
-    height: 100%;
-
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -107,39 +106,40 @@
     padding-left: 238px;
   }
   @media(max-width: 1299px) {
-    padding-left: 200px;
+    padding-left: 0;
   }
   @media(max-width: $tablet) {
     flex-direction: column-reverse;
     height: 53vh;
+    padding-left: 0;
   }
   @media(max-width: $mobile) {
     height: 52vh;
   }
-  @media(max-width: $mobile) and (max-height: 750px) {
-    height: 280px;
-  }
+ 
 }
 
 .main-block__text {
   transform: rotate(-2.14deg);
-  width: 179px;
-  font-size: 19px;
+  width: 213px;
+  font-size: 21px;
   position: relative;
   z-index: 2;
   font-weight: 500;
   line-height: 1.52;
-  letter-spacing: -0.19px;
+  letter-spacing: -0.21px;
   font-family: var(--font-secondary);
   text-align: right;
   @media(max-width: 1499px) {
     font-size: 17.655px;
+    letter-spacing: -0.177px;
   }
   @media (max-width: $tablet) {
     align-self: flex-end;
     transform: rotate(0deg);
     font-size: 26px;
     width: 240px;
+    letter-spacing: -0.26px;
   }
 
   b {
@@ -149,6 +149,7 @@
 
 .light-text {
   font-weight: 300;
+  position: relative;
 }
 
 .main-block__bottom {
@@ -182,12 +183,18 @@
 }
 
 .title-descr {
-  display: inline-flex;
-  flex-direction: column;
   margin-left: -60px;
-  margin-top: 20px;
+  display: inline-flex;
+  align-items: flex-end;
+  transform: translateY(-10px);
+  vertical-align: bottom;
   @media (max-width: 1499px) {
+    margin-left: -45px;
+
+  }
+  @media(max-width: 1299px) {
     margin-left: -40px;
+    transform: translateY(20px);
   }
   @media(max-width: $tablet) {
     margin-top: 0px;
@@ -199,24 +206,6 @@
   }
 }
 
-.title-descr-label {
-  margin-bottom: 17px;
-  color: #FFF;
-  font-size: 62.612px;
-  font-weight: 700;
-  line-height: 0.86;
-  display: inline-block;
-  @media (max-width: 1499px) {
-    font-size: 52.64px;
-
-  }
-  @media(max-width: $tablet) {
-    font-size: 35.168px;
-  }
-  @media(max-width: $mobile) {
-    font-size: 16.435px;
-  }
-}
 
 .title-descr-text {
   color: #FFF;
@@ -226,7 +215,6 @@
   line-height: 1.23;
   letter-spacing: -0.26px;
   padding-left: 10px;
-  font-weight: 500;
   position: relative;
   z-index: 2;
   display: inline-block;
@@ -257,9 +245,9 @@
   }
 
   @media(max-width: $mobile) {
-    b {
-      font-weight: 700;
-    }
+    //b {
+    //  font-weight: 700;
+    //}
   }
   @media(max-width: $mobileSmall) {
     max-width: 278px;
@@ -271,4 +259,20 @@
 
 #logo {
   display: none !important;
+}
+
+.tm {
+  display: inline-block;
+}
+
+.title-descr-label {
+  position: absolute;
+  top: 17%;
+  margin-bottom: 17px;
+  color: #FFF;
+  font-size: 0.28em;
+  font-weight: 700;
+  line-height: 0.86;
+  left: 90%;
+  display: inline-block;
 }
