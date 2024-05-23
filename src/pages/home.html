@@ -35,7 +35,10 @@
                         </div>
                         <div class="main-block__animation">
                             <div class="wrap">
-                                <canvas id="canvas"></canvas>
+
+                                <spline-viewer
+                                        url="https://prod.spline.design/20dGyTTufZ-vZ9Ja/scene.splinecode"></spline-viewer>
+                                <!--                                <canvas id="canvas"></canvas>-->
                             </div>
                             <!--                            <spline-viewer-->
                             <!--                                    url="https://prod.spline.design/20dGyTTufZ-vZ9Ja/scene.splinecode" rameborder='0'-->
@@ -50,6 +53,7 @@
         </div>
     </main>
 </div>
+<script async type="module" src="https://unpkg.com/@splinetool/viewer@1.3.8/build/spline-viewer.js"></script>
 <script>
     const arrays = ['Collecting dust', 'Burning up', 'Searching the stars']
     const textWrap = document.querySelector('.random-text')
