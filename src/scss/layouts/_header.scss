@@ -52,6 +52,45 @@
     gap: 16px;
   }
 
+  li {
+    &:first-child {
+      a {
+        span {
+          @media (min-width: $tablet) {
+            animation: anim-text1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.6s infinite;
+          }
+        }
+
+        svg {
+          animation: anim-icon1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+          @media(max-width: $tablet) {
+            animation: anim-icon12 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      a {
+        span {
+          @media (min-width: $tablet) {
+            animation: anim-text1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s infinite;
+          }
+        }
+
+        svg {
+          animation: anim-icon1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
+
+          @media(max-width: $tablet) {
+            width: 14px;
+            height: 14px;
+            animation: anim-icon12 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
+          }
+        }
+      }
+    }
+  }
+
   &:hover {
     a {
       span, svg, img {
