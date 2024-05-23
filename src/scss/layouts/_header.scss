@@ -57,14 +57,14 @@
       a {
         span {
           @media (min-width: $tablet) {
-            animation: anim-text1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.6s infinite;
+            animation: anim-text1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.6s infinite;
           }
         }
 
         svg {
-          animation: anim-icon1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+          animation: anim-icon1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
           @media(max-width: $tablet) {
-            animation: anim-icon12 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+            animation: anim-icon12 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
           }
         }
       }
@@ -74,17 +74,17 @@
       a {
         span {
           @media (min-width: $tablet) {
-            animation: anim-text1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s infinite;
+            animation: anim-text1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1s infinite;
           }
         }
 
         svg {
-          animation: anim-icon1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
+          animation: anim-icon1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
 
           @media(max-width: $tablet) {
             width: 14px;
             height: 14px;
-            animation: anim-icon12 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
+            animation: anim-icon12 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1s;
           }
         }
       }
@@ -148,15 +148,14 @@
     &:hover {
       p.text {
         @media (min-width: $tablet) {
-          animation: anim-text1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: anim-text1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
       }
 
       p.svg {
-        animation: anim-icon1 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        animation: anim-icon1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         @media(max-width: $tablet) {
-
-          animation: anim-icon12 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: anim-icon12-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
         }
       }
 
@@ -177,6 +176,62 @@
   0% {
     transform: translateX(0px);
   }
+  69% {
+    transform: translateX(0px);
+  }
+  79% {
+    transform: translateX(-6px);
+  }
+  89% {
+    transform: translateX(-6px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes anim-icon1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  69% {
+    transform: rotate(0deg);
+  }
+  79% {
+    transform: rotate(-7deg);
+  }
+  89% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes anim-icon12 {
+  0% {
+    transform: translate(0px, 0) rotate(0deg);
+  }
+  69% {
+    transform: translate(0px, 0) rotate(0deg);
+
+  }
+  79% {
+    transform: translate(6px, 0) rotate(-7deg);
+  }
+  89% {
+    transform: translate(6px, 0) rotate(-7deg);
+  }
+  100% {
+    transform: translate(0px, 0) rotate(0deg);
+  }
+}
+
+
+@keyframes anim-text1-hover {
+  0% {
+    transform: translateX(0px);
+  }
   33% {
     transform: translateX(-6px);
   }
@@ -185,11 +240,10 @@
   }
   100% {
     transform: translateX(0px);
-
   }
 }
 
-@keyframes anim-icon1 {
+@keyframes anim-icon1-hover {
   0% {
     transform: rotate(0deg);
   }
@@ -204,7 +258,7 @@
   }
 }
 
-@keyframes anim-icon12 {
+@keyframes anim-icon12-hover {
   0% {
     transform: translate(0px, 0) rotate(0deg);
   }
@@ -218,7 +272,3 @@
     transform: translate(0px, 0) rotate(0deg);
   }
 }
-
-
-
-
