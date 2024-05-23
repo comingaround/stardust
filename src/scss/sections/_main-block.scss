@@ -82,10 +82,12 @@
       transform: translate(-11%, -30%);
       height: 120vh;
     }
-    //@media(max-width: $mobile) {
-    //  transform: translate(-21%, -28%);
-    //  width: 2000px !important;
-    //}
+    @media(max-width: $mobile) {
+      height: 90vh;
+    }
+    @media(max-width: $mobile) and (max-height: 750px) {
+      height: 80vh;
+    }
   }
 
   canvas {
@@ -114,9 +116,11 @@
     padding-left: 0;
   }
   @media(max-width: $mobile) {
-    height: 52vh;
+    height: 45vh;
   }
- 
+  @media(max-width: $mobile) and (max-height: 750px) {
+    height: 40vh;
+  }
 }
 
 .main-block__text {
