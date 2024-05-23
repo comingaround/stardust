@@ -56,6 +56,21 @@
     gap: 16px;
   }
 
+  &:hover {
+    li {
+      a {
+        span {
+          animation: none !important;
+        }
+
+        svg {
+          animation: none !important;
+
+        }
+      }
+    }
+  }
+
   li {
     &:first-child {
       a {
