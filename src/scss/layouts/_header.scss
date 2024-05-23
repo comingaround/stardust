@@ -21,10 +21,14 @@
 }
 
 .header__row {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   @media(max-width: $tablet) {
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
   }
 }
 
@@ -57,14 +61,14 @@
       a {
         span {
           @media (min-width: $tablet) {
-            animation: anim-text1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.6s infinite;
+            animation: anim-text1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) 1.3s infinite;
           }
         }
 
         svg {
-          animation: anim-icon1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+          animation: anim-icon1 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.3s;
           @media(max-width: $tablet) {
-            animation: anim-icon12 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.6s;
+            animation: anim-icon12 5.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite 1.3s;
           }
         }
       }
@@ -162,14 +166,14 @@
     &:hover {
       p.text {
         @media (min-width: $tablet) {
-          animation: anim-text1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: anim-text1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         }
       }
 
       p.svg {
-        animation: anim-icon1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        animation: anim-icon1-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         @media(max-width: $tablet) {
-          animation: anim-icon12-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: anim-icon12-hover 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
         }
       }
 
@@ -252,7 +256,7 @@
     transform: translateX(-6px);
   }
   100% {
-    transform: translateX(0px);
+    transform: translateX(-6px);
   }
 }
 
@@ -287,7 +291,7 @@
     transform: rotate(6deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(6deg);
   }
 }
 
@@ -311,7 +315,7 @@
     transform: translate(6px, 0) rotate(6deg);
   }
   100% {
-    transform: translate(0px, 0) rotate(0deg);
+    transform: translate(6px, 0) rotate(6deg);
   }
 }
 
