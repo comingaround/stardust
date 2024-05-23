@@ -48,14 +48,14 @@
   }
 
   .lt {
-    letter-spacing: -2%;
+    letter-spacing: -0.02em;
   }
 
   @media(max-width: $tablet) {
-    font-size: 16.9vw
+    font-size: 17.6vw
   }
   @media(max-width: $mobile) {
-    font-size: 16.6vw
+    font-size: 17.4vw
   }
 
   .red {
