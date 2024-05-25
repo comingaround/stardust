@@ -52,6 +52,10 @@
     
   }
 
+  .astrix-wrapper{
+    white-space: nowrap;
+  }
+
   @media(max-width: $tablet) {
     font-size: 17.6vw
   }
