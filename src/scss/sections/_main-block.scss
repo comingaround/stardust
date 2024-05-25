@@ -66,8 +66,13 @@
     display: inline-block;
     transform-origin: 50% 25%;
     animation: spin .5s ease-out 1.6s forwards; /* Apply the spin animation with a 3s delay */
+    &:hover{
+      color: blue !important;
+      animation: spin .5s ease-out backwards;
+    }
   }
 }
+
 
 
 @keyframes spin {

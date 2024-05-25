@@ -10,13 +10,13 @@ const animationDataUrl = 'https://lottie.host/69d76559-73f6-4c6f-bb2b-6b54678977
 const mainAnimation = lottie.loadAnimation({
     container: animationContainer,
     renderer: 'svg',
-    loop: true,
+    loop: 2,
     autoplay: true,
     path: animationDataUrl
 });
 
 // Set initial playback speed
-lottie.setSpeed(2);
+mainAnimation.setSpeed(1.75);
 
 // Load star menu animation
 const starMenuAnimationContainer = document.getElementById('idle-star--menu');
@@ -27,6 +27,8 @@ const animationMenu = lottie.loadAnimation({
     autoplay: true,
     path: animationDataUrl
 });
+
+animationMenu.setSpeed(1.5);
 
 // Pause the animation menu for 4 seconds after each loop
 animationMenu.addEventListener('loopComplete', () => {
