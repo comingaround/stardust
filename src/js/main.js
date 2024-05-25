@@ -4,7 +4,7 @@ import "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js";
 
 // Load the Lottie animation
 const animationContainer = document.getElementById('lottie');
-const animationDataUrl = 'https://lottie.host/05a4076f-4ef3-4c62-87c3-4c7bdda65b2f/09VxGl9S2G.json';
+const animationDataUrl = 'https://lottie.host/69d76559-73f6-4c6f-bb2b-6b546789772e/zsiTlYKSdX.json';
 
 // Load main animation
 const mainAnimation = lottie.loadAnimation({
