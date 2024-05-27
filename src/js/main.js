@@ -4,7 +4,7 @@ import "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js";
 
 // Load the Lottie animation
 const animationContainer = document.getElementById('lottie');
-const animationDataUrl = 'https://lottie.host/69d76559-73f6-4c6f-bb2b-6b546789772e/zsiTlYKSdX.json';
+const animationDataUrl = '/src/lotties/idle-star.json'; // Updated local file path
 
 // Load main animation
 const mainAnimation = lottie.loadAnimation({
