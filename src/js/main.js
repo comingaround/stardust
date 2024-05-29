@@ -27,7 +27,7 @@ function hidePreloader() {
 }
 
 // Load the main animation but do not autoplay
-const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json', false, false, 1.75); // Loop set to false and autoplay set to false
+const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json', false, false, 1.75);
 
 if (mainAnimation) {
     mainAnimation.addEventListener('complete', () => {
