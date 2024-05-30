@@ -20,13 +20,11 @@ function loadLottieAnimation(containerId, animationPath, loop = true, autoplay =
     return null;
 }
 
-// Function to hide the preloader and show the main content
 function hidePreloader() {
     const preloader = document.querySelector('.preloader');
-    preloader.style.animation = 'preloader 1s linear forwards';
+    preloader.style.animation = 'preloader 1.25s linear forwards';
 }
 
-// Load the main animation but do not autoplay
 const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json', false, false, 1.25);
 
 if (mainAnimation) {
@@ -34,24 +32,25 @@ if (mainAnimation) {
         // Wait for 1 milisecond after the animation completes
         setTimeout(() => {
             hidePreloader();
-        }, 1);
+        }, 10);
     });
 
-    // Delay the start of the main animation by 0.3 second
+    // Delay the start of the main animation by 0.1 second
     setTimeout(() => {
         mainAnimation.play();
-    }, 300);
+    }, 100);
 }
 
-// Load the star menu animation
-const animationMenu = loadLottieAnimation('idle-star--menu', '/src/lotties/idle-star.json', true, true, 1.5);
+setTimeout(() => {
+    const animationMenu = loadLottieAnimation('idle-star--menu', '/src/lotties/idle-star.json', true, true, 1.5);
 
-// Pause the animation menu for 4 seconds after each loop
-if (animationMenu) {
-    animationMenu.addEventListener('loopComplete', () => {
-        animationMenu.pause();
-        setTimeout(() => {
-            animationMenu.play();
-        }, 4000); // 4000 milliseconds = 4 seconds
-    });
-}
+    // Pause the animation menu for 4 seconds after each loop
+    if (animationMenu) {
+        animationMenu.addEventListener('loopComplete', () => {
+            animationMenu.pause();
+            setTimeout(() => {
+                animationMenu.play();
+            }, 4000); // 4000 milliseconds = 4 seconds
+        });
+    }
+}, 2500); // 4000 milliseconds = 4 seconds delay
