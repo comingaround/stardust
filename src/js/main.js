@@ -23,24 +23,24 @@ function loadLottieAnimation(containerId, animationPath, loop = true, autoplay =
 // Function to hide the preloader and show the main content
 function hidePreloader() {
     const preloader = document.querySelector('.preloader');
-    preloader.style.animation = 'preloader 0.5s linear forwards';
+    preloader.style.animation = 'preloader 1s linear forwards';
 }
 
 // Load the main animation but do not autoplay
-const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json', false, false, 1.75);
+const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json', false, false, 1.25);
 
 if (mainAnimation) {
     mainAnimation.addEventListener('complete', () => {
-        // Wait for 1 second after the animation completes
+        // Wait for 1 milisecond after the animation completes
         setTimeout(() => {
             hidePreloader();
-        }, 100);
+        }, 1);
     });
 
-    // Delay the start of the main animation by 1 second
+    // Delay the start of the main animation by 0.3 second
     setTimeout(() => {
         mainAnimation.play();
-    }, 200);
+    }, 300);
 }
 
 // Load the star menu animation
