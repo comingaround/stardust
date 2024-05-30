@@ -48,13 +48,19 @@
         setTimeout(function() {
             const animationWrapper = document.getElementById('animation-wrapper');
             const animationContent = `
-                <div class="main-block__animation">
+                <div class="main-block__animation" id="main-block-animation">
                     <div class="wrap">
                         <spline-viewer url="https://prod.spline.design/20dGyTTufZ-vZ9Ja/scene.splinecode"></spline-viewer>
                     </div>
                 </div>
             `;
             animationWrapper.innerHTML = animationContent;
+
+            // Apply styles to the container
+            const container = document.getElementById('main-block-animation');
+            container.style.willChange = 'transform, opacity';
+            container.style.backfaceVisibility = 'hidden';
+            container.style.transform = 'translateZ(0)';
         }, cubeDelay);
     });
 </script>

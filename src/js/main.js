@@ -6,6 +6,11 @@ import "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js";
 function loadLottieAnimation(containerId, animationPath, loop = true, autoplay = true, speed = 1) {
     const container = document.getElementById(containerId);
     if (container) {
+
+        container.style.willChange = 'transform, opacity';
+        container.style.backfaceVisibility = 'hidden';
+        container.style.transform = 'translateZ(0)';
+        
         const animation = lottie.loadAnimation({
             container: container,
             renderer: 'svg',
