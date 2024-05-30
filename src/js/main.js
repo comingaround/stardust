@@ -29,16 +29,19 @@ const mainAnimation = loadLottieAnimation('lottie', '/src/lotties/idle-star.json
 
 if (mainAnimation) {
     mainAnimation.addEventListener('complete', () => {
-        // Wait for 1 milisecond after the animation completes
+        // Wait for 10 milliseconds after the animation completes
         setTimeout(() => {
             hidePreloader();
         }, 10);
     });
 
-    // Delay the start of the main animation by 0.1 second
+    // Determine the appropriate delay based on the screen width
+    const delay = window.innerWidth <= 992 ? 1100 : 100;
+
+    // Delay the start of the main animation
     setTimeout(() => {
         mainAnimation.play();
-    }, 100);
+    }, delay);
 }
 
 setTimeout(() => {
@@ -53,4 +56,4 @@ setTimeout(() => {
             }, 4000); // 4000 milliseconds = 4 seconds
         });
     }
-}, 2500); // 4000 milliseconds = 4 seconds delay
+}, 2500); // start delay
